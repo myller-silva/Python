@@ -6,4 +6,3 @@ n.append( float(input("Digite o primeiro numero: ")) )
 n.append( int(input("Digite o primeiro numero: ")) )
 
 print(f"\n{ max(n) } - { min(n) } = { max(n)-min(n) }\n")
-
