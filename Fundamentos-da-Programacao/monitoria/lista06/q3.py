@@ -2,8 +2,7 @@ from math import pow
 
 def printMatriz(matriz, n, format):
   for i in range(0, n*n):
-    if(i%n==0 and i!=0):
-      print()
+    if(i%n==0 and i!=0): print()
     print(f"{matriz[i]:{format}}", end=(" "))
 
 
@@ -19,22 +18,17 @@ def ehQuadradoMagico(matriz, n):
   # linhas:
   for i in range(0, n):
     linhas.append( somatorio(matriz, i*n, i*n+n, 1) )
-    if(i==0):
-      chave = linhas[0]
-      continue
-    if(linhas[i]!=chave):
-      return False
+    if(i==0): chave = linhas[0];continue
+    if(linhas[i]!=chave): return False
+  # colunas:
   for i in range(0, n):
     colunas.append( somatorio(matriz, inicio=i, ate=n*n, passo=n) )
-    if(colunas[i]!=chave ):
-      return False
+    if(colunas[i]!=chave ): return False
   # diagonais:
   diagonalPrincipal = somatorio( matriz, inicio=0, ate=n*n, passo=n+1 )
-  if(diagonalPrincipal!=chave):
-    return False
+  if(diagonalPrincipal!=chave): return False
   diagonalSecundaria = somatorio( matriz, inicio=n-1, ate=n*n-1, passo=n-1 )
-  if(diagonalSecundaria!=chave):
-    return False
+  if(diagonalSecundaria!=chave): return False
   return True
 
 # exemplos: [4, 9, 2, 3, 5, 7, 8, 1, 6], [5, 5, 5, 5, 5, 5, 5, 5, 5], [6, 1, 8, 7, 5, 3, 2, 9, 4], [8, 1, 6, 3, 5, 7, 4, 9, 2], [2, 7, 6, 9, 5, 1, 4, 3, 8], [8, 0, 7, 4, 5, 6, 3, 10, 2]
