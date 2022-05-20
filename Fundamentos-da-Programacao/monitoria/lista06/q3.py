@@ -5,7 +5,7 @@ def printMatriz(matriz, n, format):
     if(i%n==0): print()
     print(f"{matriz[i]:{format}}", end=(" "))
 
-    
+
 def somatorio(vetor, inicio, ate, passo):
   soma = 0
   for i in range(inicio, ate, passo): soma += vetor[i]
@@ -13,17 +13,12 @@ def somatorio(vetor, inicio, ate, passo):
 
 
 def ehQuadradoMagico(matriz, n):
-  # linhas:
-  chave = somatorio(matriz, 0*n, 0*n+n, 1);
+  chave = somatorio(matriz, 0, n, 1);
   for i in range(1, n):
-    if(somatorio(matriz, i*n, i*n+n, 1)!=chave): return False
-  # colunas:
-  for i in range(0, n):
-    if(somatorio(matriz, inicio=i, ate=n*n, passo=n)!=chave): return False
-  # diagonal principal:
-  if(somatorio(matriz, inicio=0, ate=n*n, passo=n+1) != chave): return False
-  # diagonal secundaria:
-  if(somatorio(matriz, inicio=n-1, ate=n*n-1, passo=n-1) != chave): return False
+    if(somatorio(matriz, i*n, i*n+n, 1) != chave): return False		#linhas
+    if(somatorio(matriz, i-1, n*n, n) != chave): return False 		#colunas
+  if(somatorio(matriz, 0, n*n, n+1) != chave): return False 		  #diagonal principal
+  if(somatorio(matriz, n-1, n*n-1, n-1) != chave): return False   #diagonal secundaria
   return True
 
 
