@@ -15,9 +15,9 @@ def somatorio(vetor, inicio, ate, passo):
 def ehQuadradoMagico(matriz, n):
   chave = somatorio(matriz, 0, n, 1);
   for i in range(1, n):
-    if(somatorio(matriz, i*n, i*n+n, 1) != chave): return False		#linhas
-    if(somatorio(matriz, i-1, n*n, n) != chave): return False 		#colunas
-  if(somatorio(matriz, 0, n*n, n+1) != chave): return False 		  #diagonal principal
+    if(somatorio(matriz, i*n, i*n+n, 1) != chave): return False   #linhas
+    if(somatorio(matriz, i-1, n*n, n) != chave): return False     #colunas
+  if(somatorio(matriz, 0, n*n, n+1) != chave): return False       #diagonal principal
   if(somatorio(matriz, n-1, n*n-1, n-1) != chave): return False   #diagonal secundaria
   return True
 
