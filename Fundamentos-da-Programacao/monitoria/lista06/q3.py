@@ -6,7 +6,7 @@ def printMatriz(matriz, n, format):
 
 def ehQuadradoMagico(matriz, n):
   chave = sum(matriz[0 : n*n : n+1]) #diagonal principal
-  if(sum(matriz[n-1 : n*n-1 : n-1])!=chave): return False #diagonal secundaria
+  if(sum(matriz[n-1 : n*n-1 : n-1]) != chave): return False #diagonal secundaria
   for i in range(0, n):
     if(sum(matriz[i*n : i*n+n : 1]) != chave): return False #linhas
     if(sum(matriz[i : n*n : n] ) != chave): return False #colunas
