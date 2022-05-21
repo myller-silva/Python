@@ -14,7 +14,6 @@ def ehQuadradoMagico(matriz, n):
 
 matriz = [] ; n = 3   #exemplo de quadrado magico: [4, 9, 2, 3, 5, 7, 8, 1, 6]
 for i in range (0, n*n): matriz.append(randint(0, 9))
-if(n*n!=len(matriz) or n==1):	
-  exit("quantidade insuficiente de elementos")
+if(n*n!=len(matriz) or n==1):	exit("quantidade insuficiente de elementos")
 printMatriz(matriz, n, "3d")
-print(f"\n{'É' if(ehQuadradoMagico(matriz, n)) else 'NÃO é'} uma matriz QUADRADO MÁGICO.")
+print(f"{'É' if(ehQuadradoMagico(matriz, n)) else 'NÃO é'} uma matriz QUADRADO MÁGICO.")
