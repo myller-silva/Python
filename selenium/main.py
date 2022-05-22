@@ -2,19 +2,16 @@ from selenium import webdriver
 
 url = "https://centralnovel.com/series/supreme-magus/"
 
-vol7_xpath = '//*[@id="post-8353"]/div[4]/div[4]/div/ul'
-
-
-# navegadorChrome = webdriver.Chrome()
 navegadorEdge = webdriver.Edge() # abrir navegador
-
-navegadorEdge.maximize_window()
 
 navegadorEdge.get(url) # navegar para pagina
 
-vol7 = navegadorEdge.find_element_by_xpath(vol7_xpath)
+volumes = navegadorEdge.find_elements_by_class_name("eplister")
 
+pdfsVol7 = volumes[2].find_elements_by_class_name("dlpdf")
 
-# navegadorEdge.close()
+length = len(pdfsVol7)
 
-# 125
+for i in range(0, 2):
+  href = pdfsVol7[i].get_property("href")
+  navegadorEdge.execute_script(f"window.open('{href}', '_blank')")
