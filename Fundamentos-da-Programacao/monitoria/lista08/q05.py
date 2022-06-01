@@ -6,19 +6,21 @@ def printMatrizResultado(nomes, voltasMatriz, format="02d"):
       print(f"{voltasMatriz[i][j]:{format}} ", end="")
     print()
 
+
 def lerDados():
   nomes = []
   matriz = []
   for i in range(0, 6):
-    nomes.append(i)
-    # nomes.append(input(f"Nome do {i+1} corredor: "))
+    nomes.append(i) # nomes.append(input(f"Nome do {i+1} corredor: "))
     voltas = []
     for j in range(0, 10):
-      voltas.append(i*j)
-      # voltas.append(input(f"Tempo na {j+1} volta: "))
+      voltas.append(i*j) # voltas.append(input(f"Tempo na {j+1} volta: "))
     matriz.append(voltas)
     # print()
   return [nomes, matriz]
+
+
+
 
 dados = lerDados()
 nomes = dados[0]
